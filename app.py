@@ -1,12 +1,10 @@
-from flask import Flask, render_template, url_for, redirect, request, send_from_directory
-#from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime 
+from flask import Flask, render_template, url_for, redirect, request, send_from_directory 
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import SubmitField
 
-# Setup app and sql
+# Setup app 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "akdndjenvkd"
 app.config["UPLOADED_PHOTOS_DEST"] = "uploads"
@@ -32,7 +30,6 @@ def index():
     # Redirect User to First Page
     return render_template("index.html")
 
-#@app.route is a decorator
 @app.route("/detect", methods=["POST", "GET"])
 def detect():
     # Redirect User to Detect Page    
@@ -40,11 +37,13 @@ def detect():
     if form.validate_on_submit():
         filename = photos.save(form.photo.data)
         file_url = url_for("get_file", filename=filename)
+        result = "Real"
     
     else:
         file_url = None
-
-    return render_template("detect.html", form=form, file_url=file_url)
+        result = None
+    
+    return render_template("detect.html", form=form, file_url=file_url, result=result)
 
 @app.route("/info")
 def info():

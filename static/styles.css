@@ -169,3 +169,69 @@ ul {
     flex-wrap: wrap; /* Allow wrapping to new lines on smaller screens */
     justify-content: flex-start; /* Align boxes to the start of the container */
 }
+
+.detect-body {
+    padding: 20px; /* Reduce padding */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;    
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-color: #f8f8f8;
+}
+.detect-container {
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
+}
+.detect-box {
+    flex: 1;
+    max-width: 45%; /* Slightly bigger */
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    border-radius: 15px;
+    background: white;
+}
+
+.detect-img {
+    width: 90%; /* Increased size */
+    height: auto;
+    max-height: 300px; /* Bigger image space */
+    object-fit: cover;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+.detect-text-box {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black; /* Added border */
+}
+/* Add border to file input display */
+.detect-box input[type="file"] {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* Add border around file input */
+.file-input-wrapper {
+    display: inline-block;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Hide the default input styling */
+.file-input-wrapper input[type="file"] {
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}

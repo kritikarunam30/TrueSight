@@ -7,27 +7,60 @@
 
 {% block main %}
     <h2>Deepfake Detection</h2>
-
-    <form method="POST" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        {% for error in form.photos.error %}
-            <span style="color: red;">{{ error }}</span>
-        {% endfor%}
-
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                {{ form.photo(class="form.control") }}
-            </div>
-            <div class="col-auto">
-                {{ form.submit(class="btn btn-success")}}
+    <div class="detect-body">
+        <div class="detect-container">
+            <div class="detect-box">
+                <h2>Upload Files</h2>
+                <img id="imageUpload" class="detect-img" src="{{ url_for('static', filename='image2.jpeg') }}"  alt="Uploading Image">
+               
+                <div>
+                    <form method="POST" enctype="multipart/form-data">
+                        {{ form.hidden_tag() }}
+                        {% for error in form.photo.error %}
+                            <span style="color: red;">{{ error }}</span>
+                        {% endfor%}
+                    
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <div class="detect-img">
+                                    <div class="file-input-wrapper" width="800">
+                                        {{ form.photo(id="fileInput",class="form-control") }}
+                                    </div>
+                                </div>                               
+                                
+                            </div>
+                            <div class="col-auto">
+                                {{ form.submit(class="btn btn-success")}}
+                            </div>
+                        </div>
+                    
+                    </form>
+                        
+                    </div>
+                </div>
+            <div class="detect-box">
+                <h2>Results</h2>
+                {% if file_url %}
+                    <div class="mt-5">
+                        <img src="{{ file_url }}" style="width: 400px;">
+                    </div>
+                {% endif %}
+                <br>
+                <h4>Here Are Your Results</h4>
+    
+                <h5>Model Analysics: {{ result }}</h5>
+                <h5>Model Accuracy: 82.02%</h5>
             </div>
         </div>
-
-    </form>
-    {% if file_url %}
-    <div class="mt-5">
-        <img src="{{ file_url}}" style="width: 400px;">
-    </div>
-    {% endif %}
-
+    </div>    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imageUpload = document.getElementById("imageUpload");
+            const fileInput = document.getElementById("fileInput");
+    
+            imageUpload.addEventListener("click", function() {
+                fileInput.click(); // Triggers file selection
+            });
+        });
+    </script>
 {% endblock %}
