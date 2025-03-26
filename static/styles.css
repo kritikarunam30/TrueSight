@@ -1,0 +1,171 @@
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color:#212431;
+    font-family: "Fredoka", sans-serif;
+    font-weight: bold;
+}
+
+/* For Index, Detect */
+.navbar-nav.me-auto.mt-2 {
+    /* Your styles here */
+    color:#ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    height: 50px;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 1.33;
+    outline: none;
+    position: relative;
+    text-decoration: none
+
+}
+/* For register, login... */
+.navbar-nav.ms-auto.mt-2
+{
+    font-weight: 500;
+    color:#ffffff;
+}
+/* Change text color for navbar links */
+.navbar-nav .nav-link {
+    color: #ffffff !important;  /* Ensure white text */
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important; /* Light gray */
+}
+
+/* For headings */
+h2
+{
+    padding: 20px;
+    color: #212431;
+    font-family: "Fredoka", sans-serif;
+    font-weight: bold;
+    margin-top: -30px;
+}
+
+.logo {
+    padding-left: 25px;
+    margin-right: 5px; /* Add slight margin to separate */
+    max-height: 50px;
+    width: auto;
+}
+.textlogo {
+    padding-left: 0;
+    margin-left: 0;
+    max-height: 50px;
+    width: auto;
+    vertical-align: middle; /* Aligns better with the logo */
+}
+
+.button {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px; /* Ensure oval shape */
+    height: 56px; /* Set height for a balanced oval */
+    cursor: pointer;
+    border-radius: 999px; /* Ensures a fully oval shape */
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    padding: 14px 32px; /* Adjust for oval proportions */
+    text-decoration: none;
+    transition: 0.3s linear;
+}
+
+.button:hover {
+    background-color: #222;
+}
+
+.button::after {
+    content: '↗';
+    font-size: 18px;
+    margin-left: 8px; /* Adds spacing between text and arrow */
+}
+
+.image-container {
+    width: 40%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-and-button-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    justify-content: space-between; /* Distributes space between text and button */
+    width: 60%; /* Take remaining space */
+}
+
+.text-container {
+    max-width: 500px;
+    flex-direction: column; /* Ensures elements stack vertically */
+    text-align: left; /* Justifies the text */
+    line-height: 1.8; /* Increases spacing between lines */
+    word-spacing: 2px; /* Slightly increases space between words */
+    letter-spacing: 0.5px; /* Adds space between letters for better readability */
+    font-size: 16px; /* Adjust font size as needed */
+    font-family: sans-serif;
+    
+}
+
+.page-break {
+    page-break-before: always;
+}
+ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.cute-box {
+    background-color: #c2d6d1; /* Light blue background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    margin: 10px; /* Add spacing around each box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: calc(50% - 20px); /* Adjust width to fit side by side with margin */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.cute-box strong {
+    display: block; /* Make the bold title a block element */
+    margin-bottom: 10px; /* Add space below the title */
+    color: #333; /* Darker text for the title */
+    font-size: 1.1em;
+}
+
+.cute-box ul {
+    list-style: disc; /* Use disc bullets for the inner list */
+    padding-left: 20px; /* Indent the inner list */
+    margin-top: 10px;
+}
+
+.cute-box ul li {
+    margin-bottom: 5px; /* Add space between list items */
+}
+
+.side-by-side-container {
+    display: flex; /* Enable flexbox */
+    flex-wrap: wrap; /* Allow wrapping to new lines on smaller screens */
+    justify-content: flex-start; /* Align boxes to the start of the container */
+}

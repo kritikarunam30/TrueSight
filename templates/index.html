@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index 
+{% endblock %}
+
+{% block main %}
+    <h2>TrueSight: A DeepFake Detection AI Model</h2>
+    
+    <h4>
+        An AI Model That Indentifies Forged Official Documents and Images. Try It Out Today !!!
+    </h4>
+    <div style="display: flex; align-items: flex-start; margin-top: 20px; padding-left: 50px;">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='image1.jpeg') }}" alt="AI Deepfake Detection" width="400">
+        </div>
+
+        <div class="text-and-button-container">
+            <div class="text-container">
+                <p>
+                    The world is facing an increasing challenge from identity fraud, 
+                    a problem that has been aggravated by the rapid advancement of technology 
+                    and the shift towards digital interactions. <br><br>Fraudulent activities, 
+                    ranging from financial scams to border security breaches, often rely 
+                    on the use of fake or manipulated identification documents, leading to 
+                    significant security risks. <br><br>Now more than ever must we rely on technology to 
+                    accurately indentify real from fake documents.<br><br>
+                </p>
+            </div>
+            <a href="/detect" class="button">Detect An Image</a>
+        </div>
+    </div>
+
+    <div class="page-break"></div>        
+    
+    
+{% endblock %}
